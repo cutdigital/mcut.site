@@ -10,7 +10,8 @@ jobs:
       - uses: actions/checkout@v2
         with:
           repository: cutdigital/mcut-headers # clone the mcut-headers
-          token: ${{ secrets.my_pat }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  
       - uses: actions/setup-python@v2
         with:
           python-version: 3.x
