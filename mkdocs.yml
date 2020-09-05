@@ -1,0 +1,53 @@
+site_name: MCUT
+
+markdown_extensions:
+  - codehilite
+  - admonition
+  - attr_list
+  - markdown.extensions.footnotes
+  - markdown.extensions.smarty
+  - pymdownx.superfences
+  - pymdownx.details
+  - pymdownx.inlinehilite
+  - pymdownx.arithmatex
+  - pymdownx.emoji
+
+extra:
+  search:
+    tokenizer: '[\s\-\.::]+'
+
+theme:
+  name: 'material'
+  palette:
+    primary: 'deep purple'
+    accent: 'red'
+  font:
+    text: 'Merriweather'
+    code: 'Inconsolata'
+  icon: 
+    logo: material/home
+
+extra_css:
+  - extras.css
+
+extra_javascript:
+  - 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'
+
+google_analytics: ['UA-58346315-3', 'auto']
+
+repo_name: 'cutdigital/mcut-docs'
+repo_url: 'https://github.com/cutdigital/mcut-docs.git'
+
+nav:
+  - Home: 'index.md'
+  - Setup : 'building.md'
+  - Tutorials : 
+    - 'Using MCUT' : 'tutorials/using.md'
+    - 'Hello triangle' : 'tutorials/hello_triangle.md'
+    - 'Mesh setup' : 'tutorials/load_mesh.md'
+    - 'Debugging' : 'tutorials/debugging.md'
+  - Docs : 'html/index.html'
+  - Caveats: 'caveats.md'
+  #- License: 'license.md'
+  #- Acknowledge : 'acknowledgement.md'
+
