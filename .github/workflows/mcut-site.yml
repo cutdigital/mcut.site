@@ -2,22 +2,21 @@ name: mcut-site
 on:
   push:
     branches:
-      - master
+      - master 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-python@v2
-        with:
-          python-version: 3.x
-        uses: actions/checkout@master
         with:
           repository: cutdigital/mcut-headers # clone the mcut-headers
           token: ${{ secrets.my_pat }}
+      - uses: actions/setup-python@v2
+        with:
+          python-version: 3.x
       - run: pip install mkdocs-material # install theme
       - run: pip install mkdocs-doxygen-plugin # generating code documentation
       - run: mkdocs gh-deploy --force # deploy
-      env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          CUSTOM_DOMAIN: mcut.com
+    env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        CUSTOM_DOMAIN: mcut.com
