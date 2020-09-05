@@ -35,8 +35,20 @@ extra_javascript:
 
 google_analytics: ['UA-58346315-3', 'auto']
 
-repo_name: 'cutdigital/mcut-docs'
-repo_url: 'https://github.com/cutdigital/mcut-docs.git'
+repo_name: 'cutdigital/mcut-site'
+repo_url: 'https://github.com/cutdigital/mcut-site.git'
+
+# https://github.com/pieterdavid/mkdocs-doxygen-plugin
+plugins:
+  - doxygen:
+      tryclone: yes
+      packages:
+        - doxygen:
+            url: . # location of Doxyfile
+        - doxyfwk:
+            url    : https://github.com/cutdigital/mcut-headers.git
+            config : Doxyfile
+            workdir: . ## could be left out in this case
 
 nav:
   - Home: 'index.md'
@@ -46,7 +58,7 @@ nav:
     - 'Hello triangle' : 'tutorials/hello_triangle.md'
     - 'Mesh setup' : 'tutorials/load_mesh.md'
     - 'Debugging' : 'tutorials/debugging.md'
-  - Docs : 'html/index.html'
+  - Docs : 'site/doxygen/index.html'
   - Caveats: 'caveats.md'
   #- License: 'license.md'
   #- Acknowledge : 'acknowledgement.md'
