@@ -2,7 +2,7 @@
 
 Source code documentation for the MCUT project
 
-## Setup
+## Setup 
 
 * Ensure you have `pip3` which is necessary to install the MkDocs theme that we use called [Material](https://github.com/squidfunk/mkdocs-material))
     - `curl https://bootstrap.pypa.io/get-pip.py | python`
