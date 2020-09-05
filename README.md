@@ -19,3 +19,10 @@ Source code documentation for the MCUT project
 * Serve website locally (http://127.0.0.1:8000/)
     - `mkdocs serve`
 
+## Notes
+
+This repo/site was setup according to instructions contained in the following:
+* https://github.com/marketplace/actions/deploy-mkdocs
+* https://squidfunk.github.io/mkdocs-material/publishing-your-site/
+* https://docs.github.com/en/actions/configuring-and-managing-workflows/configuring-a-workflow#creating-a-workflow-file
+
