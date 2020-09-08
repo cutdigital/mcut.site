@@ -1,0 +1,3 @@
+# Licensing
+
+You can buy a commercial license for MCUT from [CutDigital](www.cut-digital.com). The commercial offer is adapted to academic/research and industry customers. We offer flexible licensing options which are available for a wide range of applications and budgets. MCUT is licensed once for every product you make until the end of time. Our support options range from questions over email to bug-fixes and on-site visits (if reasonable) from the actual authors of the code. We’re open to negotiating reasonable terms as well. We recognize that situations are unique, and we are prepared to tailor a license specifically to your needs. Contact CutDigital for further information. (At the momeny, we only license to companies and academic institutions).
