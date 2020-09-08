@@ -40,15 +40,15 @@ repo_name: 'cutdigital/mcut-docs'
 repo_url: 'https://github.com/cutdigital/mcut-docs.git'
 
 nav:
-  - Home: 'index.md'
-  - Gallery : 'gallery.md'
-  - Setup : 'building.md'
-  - Tutorials : 
+  - Home: 'index.md' 
+  - Gallery: 'gallery.md'
+  - Tutorials: 
+    - 'Build': 'building.md'
     - 'Using MCUT' : 'tutorials/using.md'
     - 'Hello triangle' : 'tutorials/hello_triangle.md'
     - 'Mesh setup' : 'tutorials/load_mesh.md'
     - 'Debugging' : 'tutorials/debugging.md'
-  - Caveats: 'caveats.md'
-  #- License: 'license.md'
-  #- Acknowledge : 'acknowledgement.md'
+    - 'Caveats': 'caveats.md'
+  - Product : 'the-product.md'
+  - License: 'license.md'
 

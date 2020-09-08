@@ -5,32 +5,17 @@
 	   <img src="media/mcut_bunny0.jpg" alt="bunny1" />
     </div>
     <div style="float:right;width:49%">
-	    <img src="media/mcut_bunny1.jpg" alt="bunny11" />
+	    <img src="media/mcut_bunny1.jpg" alt="bunny11" /> 
     </div>
 </div>
 
 ## Overview
 
-**MCUT** is a tool for cutting meshes. It is a library for partitioning 2-manifold polygon meshes in order to perform operations like _slicing_, _stenciling_, _boolean operations_ and more! 
+**MCUT** (pronounced as 'emcut') is a tool for cutting meshes. It is a library for partitioning 2-manifold polygon meshes in order to perform operations like _slicing_, _stenciling_, _boolean operations_ and more using a single interface. 
 
-MCUT partitions shapes as meshes directly from input data composed of geometry and connectivity to produce crisp fragments at fine scale. There are no precomputed tetrahedralizations or signed distance fields (voxel level sets). MCUT uses a [breakthrough procedure](https://onlinelibrary.wiley.com/doi/abs/10.1111/cgf.13953) that we invented to achieve robustness with reliability, and it is the only existing method that properly cuts arbitrary-planar polygon meshes with no requirement for triangulation for meshes.
+MCUT partitions shapes as meshes directly from input data composed of geometry and connectivity to produce crisp fragments at fine scale. There are no precomputed discretizations like tetrahedral decompositions or signed distance fields (voxel level sets). MCUT uses a [breakthrough procedure](https://onlinelibrary.wiley.com/doi/abs/10.1111/cgf.13953) that we invented to achieve robustness with reliability, and it is the only existing method that properly cuts arbitrary-planar polygon meshes with no requirement for triangulation on meshes.
 
-MCUT also provides stencilling services that calculate the exact cut-outs of the cutting surface which is used to partition a shape. In addition to basic slicing and hole filling, it can perform intersection-path queries, constructive solid geometry (CSG) operations, partial cuts, and surface-to-surface cuts.
-
-## Demo 
-
-A restricted demo of the MCUT library for Linux (Ubuntu) is available here:
-
-[Download MCUT Demo](docs/media/mcut-demo.zip) 
-(_Updated 6 September 2020_)
-
-The demo contains two meshes defining a tetrahedron and another with two triangles. You can use these as basic examples to that highlight cutting capabilities and topological features. The provided executable simple takes two arguments - the source mesh and the cut mesh. Example:
-
-`mcut_cmd ./sourcemesh.off ./cutmesh.off` OR `mcut_cmd ./cutmesh.off ./sourcemesh.off `
-
-The second command has swapped the input meshes. The primary output of this simple demo are `cc*.off` files which you can view using your favourite mesh visualization tool like [MeshLab](https://www.meshlab.net/), [Geomview]() (http://www.geomview.org/) (Linux only), [Blender](https://www.blender.org/) or any other tool which can open `.off` files. 
-
-See also the [gallery](gallery) for more examples.
+MCUT also provides stencilling services that calculate the exact cut-outs of the cutting surface which is used to partition a shape. In addition to basic slicing and hole filling, it can perform intersection-path queries, constructive solid geometry (CSG) operations, partial cuts and surface-to-surface cuts.
 
 ## Why mesh cutting?
 
@@ -62,7 +47,7 @@ The above image shows a simple example of what MCUT can do. On the left is a cub
   </div>
 </div>
 
-### Arbitrary planar-polygon meshes 
+### Polygon meshes 
 
 MCUT is a general tool in that it is particularly suited for incremental cuts by supporting N-gons. Input meshes can have _arbitrary planar-polygons_ (convex or concave), thus avoiding strict restrictions of triangulations which are not unique with subsequent cuts. In effect, the connectivity of the resulting fragments is identical to the (uncut) source mesh except at edges introduced by the cut. Furthermore, the cut mesh need not partition the source mesh completely to allow _partial cut intersections_ - a feature which further lessens constraints on the relative placement of the inputs.
 
@@ -81,5 +66,21 @@ The image above shows an extreme example, which is a result of cutting a source 
 ### Robustness
 
 MCUT is _robust_, relying on well-tested geometric predicates for resolving intersections. By default, numerical operations are computed exactly up to machine precision. The tool can also be configured to work with arbitrary-precision if so desired, surpassing limitations of machine precision for increased reliability and peace of mind. 
+
+### Demo 
+
+A restricted demo of the MCUT library for Linux (Ubuntu) is available here:
+
+[Download MCUT Demo](docs/media/mcut-demo.zip) 
+(_Updated 6 September 2020_)
+
+The demo contains two meshes defining a tetrahedron and another with two triangles. You can use these as basic examples that highlight cutting capabilities and topological features. The provided executable takes two arguments - the source mesh and the cut mesh. Example:
+
+* `./mcut_cmd ./sourcemesh.off ./cutmesh.off` 
+* `./mcut_cmd ./cutmesh.off ./sourcemesh.off` (swapping inputs)
+
+The primary output of this simple demo are `cc*.off` files which you can view using your favourite mesh visualization tool like [MeshLab](https://www.meshlab.net/), [Geomview](http://www.geomview.org/) (Linux only), [Blender](https://www.blender.org/) or any other tool which can open `.off` files. 
+
+See also the [gallery](gallery) for more examples.
 
 ---
