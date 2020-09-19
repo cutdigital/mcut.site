@@ -47,7 +47,7 @@ The results of the cut.
     </div>
 </div>
 
-## Sphere torus CSG
+## Sphere & torus (CSG)
 
 Cutting a sphere with a torus (both watertight).
 
