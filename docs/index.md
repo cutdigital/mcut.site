@@ -91,7 +91,7 @@ A restricted demo of the MCUT library for Linux (Ubuntu) is available here:
 [Download MCUT Demo](docs/media/mcut-demo.zip) 
 (_Updated 6 September 2020_)
 
-The demo contains two meshes, a tetrahedron and a quad with two triangles which can be use these as _basic_ examples that highlighting the capabilities and topological features of MCUT. The executable takes two arguments - the source mesh and the cut mesh. Here is an example:
+The demo contains two meshes, a tetrahedron and a quad with two triangles which are _basic_ examples highlighting the features of MCUT. The executable takes two arguments - the source mesh and the cut mesh. Here is an example:
 
 * `./mcut_cmd ./sourcemesh.off ./cutmesh.off` 
 * `./mcut_cmd ./cutmesh.off ./sourcemesh.off` (swapping inputs)
