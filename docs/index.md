@@ -98,7 +98,7 @@ The demo contains two meshes, a tetrahedron and a quad with two triangles which 
 
 The output of this demo are `*.off` files which you can view using your favourite mesh visualization tool like [MeshLab](https://www.meshlab.net/), [Geomview](http://www.geomview.org/) (Linux only), [Blender](https://www.blender.org/) or any other tool which can open `.off` files. 
 
-Try it out with meshes of your own (restricted to at-most 16 vertices per mesh).
+You can also test the demo with your own meshes (restricted to 16 vertices per mesh, max).
 
 ### Other examples
 
