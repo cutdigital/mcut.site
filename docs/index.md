@@ -89,7 +89,7 @@ MCUT is _robust_, relying on well-tested geometric predicates for resolving inte
 A restricted demo of the MCUT library for Linux (Ubuntu) is available here:
 
 [Download MCUT Demo](docs/media/mcut-demo.zip) 
-(_Updated 6 September 2020_)
+(_Updated 20 September 2020_)
 
 The demo contains two meshes, a tetrahedron and a quad with two triangles which are _basic_ examples highlighting the features of MCUT. The executable takes two arguments - the source mesh and the cut mesh. Here is an example:
 
