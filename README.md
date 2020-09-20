@@ -1,6 +1,6 @@
 # mcut-docs
 
-Source code documentation for the MCUT project
+MCUT project page: https://cutdigital.github.io/
 
 ## Setup 
 
