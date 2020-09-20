@@ -86,7 +86,7 @@ MCUT is _robust_, relying on well-tested geometric predicates for resolving inte
 
 ### Demo 
 
-A restricted demo of the MCUT library for Linux (Ubuntu) is available here:
+A restricted demo of the MCUT library for Linux (Ubuntu) and Windows is available here:
 
 [Download MCUT Demo](docs/media/mcut-demo.zip) 
 (_Updated 20 September 2020_)
@@ -96,7 +96,9 @@ The demo contains two meshes, a tetrahedron and a quad with two triangles which 
 * `./mcut_cmd ./sourcemesh.off ./cutmesh.off` 
 * `./mcut_cmd ./cutmesh.off ./sourcemesh.off` (swapping inputs)
 
-The primary output of this simple demo are `*.off` files which you can view using your favourite mesh visualization tool like [MeshLab](https://www.meshlab.net/), [Geomview](http://www.geomview.org/) (Linux only), [Blender](https://www.blender.org/) or any other tool which can open `.off` files. 
+The output of this demo are `*.off` files which you can view using your favourite mesh visualization tool like [MeshLab](https://www.meshlab.net/), [Geomview](http://www.geomview.org/) (Linux only), [Blender](https://www.blender.org/) or any other tool which can open `.off` files. 
+
+Try it out with meshes of your own (restricted to at-most 16 vertices per mesh).
 
 ### Other examples
 
