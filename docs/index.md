@@ -120,3 +120,4 @@ You can also test the demo with your own meshes (restricted to 16 vertices per m
 Refer to the [gallery](gallery) for more examples.
 
 ---
+[Contact us](https://cut-digital.com/contact/) if you are interested in more details about our upcoming releases.

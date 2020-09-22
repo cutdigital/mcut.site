@@ -41,7 +41,7 @@ repo_url: 'https://github.com/cutdigital/mcut-docs.git'
 
 nav:
   - Home: 'index.md'
-  - Build: 'building.md' 
+  #- Build: 'building.md' 
   - Gallery: 'gallery.md'
   - Tutorials: 
     #- 'Using MCUT' : 'tutorials/using.md'
