@@ -101,9 +101,9 @@ MCUT is _robust_, relying on well-tested geometric predicates for resolving inte
 
 ### Demo 
 
-A restricted demo of the MCUT library for Linux (Ubuntu) is available here:
+A restricted demo of the MCUT library for Linux (Ubuntu) and Windows is available here:
 
-[Download MCUT Demo](docs/media/mcut-demo.zip) 
+[Download MCUT Demo](https://github.com/cutdigital/cutdigital.github.io/blob/master/docs/media/mcut-demo.zip) 
 (_Updated 20 September 2020_)
 
 The demo contains two meshes, a tetrahedron and a quad with two triangles which are _basic_ examples highlighting the features of MCUT. The executable takes two arguments - the source mesh and the cut mesh. Here is an example:
@@ -111,7 +111,9 @@ The demo contains two meshes, a tetrahedron and a quad with two triangles which 
 * `./mcut_cmd ./sourcemesh.off ./cutmesh.off` 
 * `./mcut_cmd ./cutmesh.off ./sourcemesh.off` (swapping inputs)
 
-The primary output of this simple demo are `*.off` files which you can view using your favourite mesh visualization tool like [MeshLab](https://www.meshlab.net/), [Geomview](http://www.geomview.org/) (Linux only), [Blender](https://www.blender.org/) or any other tool which can open `.off` files. 
+The output of this demo are `*.off` files which you can view using your favourite mesh visualization tool like [MeshLab](https://www.meshlab.net/), [Geomview](http://www.geomview.org/) (Linux only), [Blender](https://www.blender.org/) or any other tool which can open `.off` files. 
+
+You can also test the demo with your own meshes (restricted to 16 vertices per mesh, max).
 
 ### Other examples
 

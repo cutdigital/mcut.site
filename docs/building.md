@@ -51,6 +51,7 @@ MPFR may already be installed on your system. Otherwise, download MPFR with a pa
 
 Several pre-built packages and instructions exist online. We recommend that you create your own binaries by e.g. compiling Brian Gladman's [MPIR](https://github.com/BrianGladman/mpir ) and [MPFR](https://github.com/BrianGladman/mpfr). Once compiled, update your PATH environment variable with the relevant paths so that CMake can find the necessary headers (`gmp.h` and `mpfr.h`) and binary files (`mpfr.dll`).
 
+Our pre-compiled binaries for MPIR and MPFR can be found [here](https://github.com/cutdigital/cutdigital.github.io/blob/master/docs/media/gmp-vs2017.zip).
 ----
 
 *Minor cautions*
