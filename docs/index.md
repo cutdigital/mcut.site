@@ -22,11 +22,26 @@ MCUT also provides stencilling services that calculate the exact cut-outs of the
 In this section, we briefly describe about the utility of mesh cutting across various applications. 
 
 Cutting is a fundamental computational geometry problem (AKA "mesh arrangements") whose solution is useful in a wide set of application domains. The goal of cutting is to partition a given surface mesh, described by its vertices and connectivity, into a set of disjoint parts.
-These resulting parts are typically employed for further model design and/or simulation, such as virtual surgery, computer aided design, and simulation such as fracture.
+These resulting parts are typically employed for further model design and/or simulation, such as virtual surgery, computer aided design, and fracture.
 
-Despite existing tools (e.g. [CGAL](https://www.cgal.org/), [Cork](https://github.com/gilbo/cork), [Carve](https://code.google.com/archive/p/carve/), or [tetrahedral-mesh tools](https://github.com/loopstring/3d-cutter.git)), it is still a challenge to cut arbitary manifold surfaces without restrictive assumptions on the input meshes. 
+Despite existing tools (e.g. [CGAL](https://www.cgal.org/), [Cork](https://github.com/gilbo/cork), [Carve](https://code.google.com/archive/p/carve/), or [tetrahedral-mesh tools](https://github.com/loopstring/3d-cutter.git)), it is still a challenge to cut arbitary manifold surfaces without restrictive assumptions on the input meshes. Moreover, aside from traditional CSG operations, practically all sophisticated computer animation modelling software (Maya, Cinema4D, Blender etc.) permit only planar cuts which severely restricts their modelling and design capabilities in this regard.
 
 ## What MCUT can do
+
+<div class="row">
+  <div class="column">
+    <img src="media/mcut-armadillo-cut-surface.png" alt="drawing1" style="width:100%"/> 
+    
+  </div>
+  <div class="column">
+    <img src="media/mcut-armadillo-cut-unsealed.png" alt="drawing3" style="width:85%"/>
+  </div>
+  <div class="column">
+    <img src="media/mcut-armadillo-cut-sealed.png" alt="drawing2" style="width:85%"/> 
+    
+  </div>
+</div>
+
 
 The general design of MCUT is fairly simple to describe but has essential criteria which must be satisfied for practical use. In addition to being reasonably simple and robust, MCUT is specifically designed to be _a cutting tool_, and supports the following features: 
 
