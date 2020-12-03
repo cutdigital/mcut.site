@@ -1,4 +1,4 @@
-# Welcome to MCUT 
+# Welcome to the MCUT project 
 
 <div class="container">
     <div style="float:left;width:49%">
@@ -13,18 +13,16 @@
 
 **MCUT** (pronounced 'emcut') is a tool for cutting meshes. It is a library for partitioning 2-manifold polygon meshes in order to perform operations like _slicing_, _stenciling_, _boolean operations_ and more using a single interface. 
 
-MCUT partitions shapes as meshes directly from input data composed of geometry and connectivity to produce crisp fragments at fine scale. There are no precomputed discretizations like tetrahedral decompositions or signed distance fields (voxel level sets). MCUT uses a [breakthrough procedure](https://onlinelibrary.wiley.com/doi/abs/10.1111/cgf.13953) that we invented to achieve robustness with reliability, and it is the only existing method that properly cuts arbitrary-planar polygon meshes with no requirement for triangulation on meshes.
+MCUT partitions shapes directly from input mesh data composed of geometry and connectivity to produce crisp fragments at fine scale. It is the only existing tool allowing cuts on arbitrary-planar polygon meshes with no requirement for triangulation. Moreover, no intermediate conversions like tetrahedral decompositions or signed distance fields (voxel level sets) are required to cut shapes. 
 
-MCUT also provides stencilling services that calculate the exact cut-outs of the cutting surface which is used to partition a shape. In addition to basic slicing and hole filling, it can perform intersection-path queries, constructive solid geometry (CSG) operations, partial cuts and surface-to-surface cuts.
+MCUT also provides stencilling services that calculate the exact _cut-outs_ of the cutting surface that is used to partition a shape. In addition to basic slicing and hole filling, it can perform intersection-path queries, constructive solid geometry (CSG) operations, partial cuts and surface-to-surface cuts.
 
 ## Why mesh cutting?
 
-In this section, we briefly describe about the utility of mesh cutting across various applications. 
-
-Cutting is a fundamental computational geometry problem (AKA "mesh arrangements") whose solution is useful in a wide set of application domains. The goal of cutting is to partition a given surface mesh, described by its vertices and connectivity, into a set of disjoint parts.
+First of all, cutting is a fundamental computational geometry problem (AKA "mesh arrangements") whose solution is useful in a wide set of application domains. The goal of cutting is to partition a given surface mesh, described by its vertices and connectivity, into a set of disjoint parts.
 These resulting parts are typically employed for further model design and/or simulation, such as virtual surgery, computer aided design, and fracture.
 
-Despite existing tools (e.g. [CGAL](https://www.cgal.org/), [Cork](https://github.com/gilbo/cork), [Carve](https://code.google.com/archive/p/carve/), or [tetrahedral-mesh tools](https://github.com/loopstring/3d-cutter.git)), it is still a challenge to cut arbitary manifold surfaces without restrictive assumptions on the input meshes. Moreover, aside from traditional CSG operations, practically all sophisticated computer animation modelling software (Maya, Cinema4D, Blender etc.) permit only planar cuts which severely restricts their modelling and design capabilities in this regard.
+Now despite existing tools (e.g. [CGAL](https://www.cgal.org/), [Cork](https://github.com/gilbo/cork), [Carve](https://code.google.com/archive/p/carve/) or [tetrahedral-mesh tools](https://github.com/loopstring/3d-cutter.git)), it is still a challenge to cut manifold surfaces without restrictive assumptions on the input meshes. Moreover, aside from traditional CSG operations, practically all sophisticated computer animation modelling software ([Maya](https://www.autodesk.com/products/maya/overview), [Cinema4D](https://www.maxon.net/en/cinema-4d), [Blender](https://www.blender.org/), [MeshMixer](https://www.meshmixer.com/), [ANSYS SpaceClaim](https://www.ansys.com/products/3d-design/ansys-spaceclaim) etc.) permit only planar cuts which severely restricts their modelling and design capabilities in this regard.
 
 ## What MCUT can do
 
@@ -120,4 +118,25 @@ You can also test the demo with your own meshes (restricted to 16 vertices per m
 Refer to the [gallery](gallery) for more examples.
 
 ---
+
+## Citation
+
+If you use MCUT in your academic projects, cite the papers we
+implement as appropriate. To cite the library in general, you could use this BibTeX entry:
+
+```bibtex
+@misc{mcut,
+  title = {{MCUT}: A simple mesh cutting library},
+  author = {CutDigital Ltd},
+  note = {https://mcut.github.io/},
+  year = {2021},
+}
+```
+
+## Copyright
+
+2021 CutDigital Ltd.
+
+Please see individual files for appropriate copyright notices.
+
 [Contact us](https://cut-digital.com/contact/) if you are interested in more details about our upcoming releases.

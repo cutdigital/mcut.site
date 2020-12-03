@@ -6,6 +6,11 @@ In this tutorial, we will look at simple HelloWorld-style example of an MCUT app
 
 The first thing we will do is define our meshes, which are the source mesh and cut mesh. This section, describes how we define these meshes. 
 
+Importantly, input meshes must:
+* be manifold
+* not contain any self intersections
+* have a consistent winding order (CW or CCW)
+
 ### The source mesh
 
 Here we will now define the source mesh, which will be cube as shown in the image below.

@@ -1,4 +1,9 @@
 site_name: MCUT
+site_url: 'https://mcut.github.io/'
+repo_name: 'cutdigital/mcut'
+repo_url: 'https://github.com/cutdigital/mcut.git'
+edit_uri: '../mcut.github.io/edit/docs/docs/'
+site_description: "Simple C++ mesh cutting library"
 
 markdown_extensions:
   - codehilite
@@ -36,19 +41,54 @@ extra_javascript:
 
 google_analytics: ['UA-58346315-3', 'auto']
 
-repo_name: 'cutdigital/mcut-docs'
-repo_url: 'https://github.com/cutdigital/mcut-docs.git'
+markdown_extensions:
+  - codehilite:
+      guess_lang: false
+  - footnotes
+  - admonition
+  - toc:
+      permalink: true
+  - markdown.extensions.smarty
+  - markdown.extensions.toc:
+      permalink: true
+  - markdown.extensions.wikilinks:
+      base_url: https://github.com/cutdigital/mcut/tree/master
+  - pymdownx.arithmatex
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink:
+      repo_url_shorthand: true
+      repo_url_shortener: true
+      user: cutdigital
+      repo: mcut
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+plugins:
+  - search
 
 nav:
   - Home: 'index.md'
-  #- Build: 'building.md' 
-  - Gallery: 'gallery.md'
+  - Compilation: 'building.md' 
   - Tutorials: 
+    - 'DesignPrincipals' : 'tutorials/designPrincipals.md'
     #- 'Using MCUT' : 'tutorials/using.md'
     - 'HelloWorld' : 'tutorials/helloWorld.md'
     - 'Debugging' : 'tutorials/debugging.md'
     - 'Meshes' : 'tutorials/load_mesh.md'
     #- 'Caveats': 'caveats.md'
-  - Product : 'the-product.md'
-  - License: 'license.md'
+  #- Product : 'the-product.md'
+  - Gallery: 'gallery.md'
+  - FAQ: 'faq.md'
+  - About:
+    - 'License': 'license.md'
+    - 'Bug reports': 'bug-report.md'
+    - 'Change logs': 'changelog.md'
 
