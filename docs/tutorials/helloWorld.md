@@ -6,11 +6,6 @@ In this tutorial, we will look at simple HelloWorld-style example of an MCUT app
 
 The first thing we will do is define our meshes, which are the source mesh and cut mesh. This section, describes how we define these meshes. 
 
-Importantly, input meshes must:
-* be manifold
-* not contain any self intersections
-* have a consistent winding order (CW or CCW)
-
 ### The source mesh
 
 Here we will now define the source mesh, which will be cube as shown in the image below.
@@ -56,7 +51,7 @@ As you see, we just use simple C-style arrays to define the geometry and connect
 
 ### The cut mesh
 
-Now that we have defined our source mesh, lets define the cut mesh. This will be the object that we will be slicing our cube with. Here is what the cut mesh look like, and the code for defining this mesh is provided just below too.
+Now that we have defined our source mesh, lets define the cut mesh. This will be the object that we will be slicing our cube with. Here is what the cut mesh looks like, and the code for defining this mesh is provided just below too.
 
 <div>
   <img src="../../media/gallery/helloWorld/cutmesh.png" style="width:70%" class="center"/> 
@@ -325,5 +320,3 @@ One example application of seams is global intersection analysis in character an
 ### Summary
 
 In this tutorial, we have looked a simple HelloWorld-style of application using MCUT. First, mesh initialisation was described, showing that defining a mesh boils doing to simple C-style arrays. We then proceeded to create an MCUT context, which allowed us to submit a dispatch call to do the cutting. We demonstrated that all of these steps were brief and simple. Next, we delved into the task of querying data from MCUT after a dispatch call. In this regard, we found out how MCUT uses a "function-allocation-function procedure" to query information. This was then used to access connected components (our meshes), and their data (vertices, face indices etc.). Finally, we finished off by showing how to free internal memory allocated by the MCUT library, and then topped off with some nice visualisations of the output meshes.
-
-Checkout the [documentation](https://github.com/cutdigital/mcut-docs) for more information on how to use this awesome tool!
