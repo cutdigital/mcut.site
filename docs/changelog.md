@@ -14,14 +14,13 @@
 
 #### Future editions 
 
-- Performance improvements with exact numbers
-- Propagating vertex attributes (UVs etc.)
 - Querying partially sealed fragments
 - More tutorials
 - Multi-threading
       - Events
 - Profiling
     - Timers
+- Propagating vertex attributes (UVs etc.)
 
 ## Upcoming version (`master` branch)
 
