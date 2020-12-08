@@ -22,5 +22,5 @@ If you distribute your software based on GPL (i.e. without purchasing the commer
 
 ## The Commercial License
 
-In cases where the constraints of the Open Source license prevent you from using MCUT, you can buy a commercial license for MCUT from [CutDigital](https://cut-digital.com). MCUT is commercially licensed once for every product you make until the end of time. Support options range from questions over email to bug-fixes and on-site visits (if deemed reasonable) from the actual authors of the code. Email: [contact@cut-digital.com](contact@cut-digital.com) for further information.
+In cases where the constraints of the Open Source license prevent you from using MCUT, you can buy a commercial license for MCUT from [CutDigital](https://cut-digital.com). The commercial license includes the full source code for MCUT and any associated tools, ongoing technical support, and all future updates at no additional cost. The commercial license also allows MCUT to be used in an unlimited number of products developed by a company. Email: [contact@cut-digital.com](contact@cut-digital.com) for further information.
 
