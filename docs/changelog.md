@@ -26,10 +26,12 @@
 ## Upcoming version (`master` branch)
 
 #### New Features
+
 - Performance improvements
 
 ## Version 1.0 Changes
 Our first release marks our confidence that this library can be used outside of casual experimenting. 
+
 - Arbitrary manifold meshes. 
 - Partial cut intersections. 
 - Stencilling.
