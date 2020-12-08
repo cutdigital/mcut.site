@@ -42,7 +42,7 @@ You may also use the CMake GUI, which may be easier. The CMake website has infor
 The following CMake flag can also be used to enable compiling with arbitrary-precision numbers:
 
 ```cmake
--DMCUT_BUILD_ARBITRARY_PRECISION_NUMBERS_LIB=ON
+-DMCUT_BUILD_WITH_ARBITRARY_PRECISION_NUMBERS=ON
 ```
 
 Arbitrary-precision numbers depend on the Multiple Precision Floating-Point Reliable Library ([MPFR](https://www.mpfr.org/)), which you must install--version 4.0.2. 
@@ -80,9 +80,11 @@ You can add MCUT to an existing project's `CMakeLists.txt` using:
 ```cmake
 ...
 add_subdirectory(<path/to/mcut>) # mcut directory on your system
-target_link_libraries(myApp MCUT::mcut) # link with the MCUT library target
+target_link_libraries(myApp mcut) # link with the MCUT library target
 target_include_directories(myApp PRIVATE ${MCUT_INCLUDE_DIR}) # set include dir of MCUT headers
 ```
+
+Skim through `CMakeLists.txt` of MCUT for additional information about additional options that you may specify when configuring CMake.
 
 ## Building the Docs
 
@@ -96,8 +98,8 @@ The following CMake flag can then be used to enable documation generation:
 -DMCUT_BUILD_THE_DOCS=ON
 ```
 
-The will enable the creation of a CMake target called ```doc_doxygen```.
+This will enable the creation of a CMake target called ```doc_doxygen```.
 
-When you invoke you build tool, like `make` (e.g. ```make doc_doxygen```), your documentation will be generated as html files. You can view the documentation using your browser by opening the file `build/html/index.html`. 
+When you invoke your build tool, like `make` (e.g. ```make doc_doxygen```), your documentation will be generated as html files. You can view the documentation using your browser by opening the file `build/html/index.html`. 
 
 Feel free to reconfigure Doxygen to generate output in different formats. Refer to the Doxygen [website](https://www.doxygen.nl/index.html) for more information.

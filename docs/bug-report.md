@@ -3,7 +3,7 @@ Before opening an issue on creating a pull request, please check the following:
 !!! tip
     
     - Make sure you read the
-      FAQ before asking a new
+      [**FAQ**](../faq) before asking a new
       question, search [**existing
       issues**](https://github.com/cutdigital/mcut/issues)
       for a problem similar to yours.

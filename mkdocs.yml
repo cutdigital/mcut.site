@@ -79,12 +79,11 @@ nav:
   - Compilation: 'building.md' 
   - Tutorials: 
     - 'DesignPrincipals' : 'tutorials/designPrincipals.md'
-    #- 'Using MCUT' : 'tutorials/using.md'
     - 'HelloWorld' : 'tutorials/helloWorld.md'
     - 'Debugging' : 'tutorials/debugging.md'
-    - 'Meshes' : 'tutorials/load_mesh.md'
-    #- 'Caveats': 'caveats.md'
-  #- Product : 'the-product.md'
+    - 'Meshes' : 'tutorials/meshes.md'
+    - 'GetExactCoords' : 'tutorials/exactCoords.md'
+    - 'GetContextInfo' : 'tutorials/contextInfo.md'
   - Gallery: 'gallery.md'
   - FAQ: 'faq.md'
   - About:

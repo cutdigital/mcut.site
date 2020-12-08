@@ -285,7 +285,7 @@ In this example, we show that not only can MCUT produce watertight and externall
 
 *Patches*
 
-While the focus is generally on the source much, the versatility MCUT also allows us to create cut-outs of the source mesh.
+While the focus is generally on the source much, the versatility MCUT also allows us to create cut-outs of the cut mesh.
 
 <div class="container">
     <div style="float:left;width:49%">
@@ -298,7 +298,7 @@ While the focus is generally on the source much, the versatility MCUT also allow
     </div>
 </div>
 
-We refer to this as _stencilling_. The left image show the interior patch of the cut surface, which can be for emulating effects as simple as gingerbread man cut-outs. On the right, we show the exterior patch which likewise holds potential use-cases of its own. One example application, is producing silhouette cut-outs for simulating deformation or cloth-like effects on intricate geometries. 
+We refer to this as _stencilling_. The left image show the interior patch of the cut surface, which can be used for emulating effects like "gingerbread man" style cut-outs. On the right, we show the exterior patch which likewise holds potential use-cases of its own. One example application, is producing silhouette cut-outs for simulating deformation or cloth-like effects on intricate geometries. 
 
 *Seams*
 
@@ -315,7 +315,7 @@ Finally, in this example we show that MCUT can also be used as a practical tool 
     </div>
 </div>
 
-One example application of seams is global intersection analysis in character animation, which is the backbone of industry-standard collision-response algorithms for unoriented objects like cloth. A key point to note here is that this feature results directly from the generality of MCUT when resolving mesh intersections using the combinatorial structure of a half-edge data structure. 
+One example application of seams is global intersection analysis in character animation, which is the backbone of industry-standard collision-response algorithms for unoriented objects like cloth. A key point to note here is that this feature results directly from the generality of MCUT, resolving mesh intersections using the half-edge data structure. 
 
 ### Summary
 
