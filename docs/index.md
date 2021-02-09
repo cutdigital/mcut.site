@@ -101,28 +101,5 @@ MCUT is _robust_, relying on well-tested geometric predicates for resolving inte
 
 ### Other examples
 
-Refer to the [gallery](gallery) for more examples.
+Refer to the [gallery](gallery) for more examples. Check out the [repository](https://github.com/cutdigital/mcut/) on github too.
 
----
-
-## Citation
-
-If you use MCUT in your academic projects, cite the papers we
-implement as appropriate. To cite the library in general, you could use this BibTeX entry:
-
-```bibtex
-@misc{mcut,
-  title = {{MCUT}: A simple mesh cutting library},
-  author = {CutDigital Ltd},
-  note = {https://mcut.github.io/},
-  year = {2021},
-}
-```
-
-## Copyright
-
-2021 CutDigital Ltd.
-
-Please see individual files for appropriate copyright notices.
-
-[Contact us](https://cut-digital.com/contact/) if you are interested in more details about our upcoming releases.
