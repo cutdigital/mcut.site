@@ -1,4 +1,4 @@
-# Design principals
+# Design principles
 
 Here we summarize the main design principles in MCUT's design as a user interface:
 

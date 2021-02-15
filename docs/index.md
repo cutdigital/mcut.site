@@ -11,18 +11,18 @@
 
 ## Overview
 
-**MCUT** (pronounced 'emcut') is a tool for cutting meshes. It is a library for partitioning 2-manifold polygon meshes in order to perform operations like _slicing_, _stenciling_, _boolean operations_ and more using a single interface. 
+**MCUT** (pronounced 'emcut') is a tool for cutting meshes. It is a library for partitioning manifold polygon meshes in order to perform operations like _slicing_, _stenciling_, _boolean operations_ and more using a single simple interface. 
 
-MCUT partitions shapes directly from input mesh data composed of geometry and connectivity to produce crisp fragments at fine scale. It is the only existing tool allowing cuts on arbitrary planar-polygon meshes with no requirement for triangulation. Moreover, no intermediate conversions like tetrahedral decompositions or signed distance fields (voxel level sets) are required to cut shapes. 
+MCUT partitions shapes directly from input mesh data composed of geometry and connectivity to produce crisp fragments at fine scale. It is the only existing tool allowing cuts on arbitrary planar-polygon meshes with no requirement for triangulation. Moreover, no intermediate conversions like tetrahedral decompositions or signed distance-fields (voxel level-sets) are required to cut shapes. 
 
-MCUT also provides stencilling services that calculate the exact _cut-outs_ of the cutting surface that is used to partition a shape. In addition to cononical slicing and hole filling operations (i.e. through cuts), it can perform intersection-path queries, constructive solid geometry (CSG) operations and partial (i.e. non-through) cuts.
+MCUT also provides stencilling services that calculate the exact _cut-outs_ of the cutting surface that is used to partition a shape. In addition to canonical slicing and hole filling operations (i.e. 'through' cuts), it can perform intersection-path queries, constructive solid geometry (CSG) operations and partial (i.e. non-through) cuts.
 
 ## Why mesh cutting...?
 
 Cutting is a fundamental computational geometry problem (AKA "mesh arrangements") whose solution is useful in a wide set of application domains. The goal of cutting is to partition a given surface mesh, described by its vertices and faces/polygons, into a set of disjoint parts.
-These resulting parts are typically employed for further model design and/or simulation, such as virtual surgery, video game level design, computer aided manufacturing and fracture simulation.
+These resulting parts are typically employed for further model design and/or simulation, such as virtual surgery, video game level design, computer aided design and manufacturing, and fracture simulation.
 
-Now despite existing tools (e.g. [CGAL](https://www.cgal.org/), [Cork](https://github.com/gilbo/cork), [Carve](https://code.google.com/archive/p/carve/) or [tetrahedral-mesh tools](https://github.com/loopstring/3d-cutter.git)), it is still a challenge to cut manifold surfaces without restrictive assumptions on the input meshes. Moreover, aside from traditional CSG operations, practically all sophisticated computer animation modelling software ([Maya](https://www.autodesk.com/products/maya/overview), [Cinema4D](https://www.maxon.net/en/cinema-4d), [Blender](https://www.blender.org/), [MeshMixer](https://www.meshmixer.com/), [ANSYS SpaceClaim](https://www.ansys.com/products/3d-design/ansys-spaceclaim) etc.) permit only flat _planar cuts_ which severely restricts their modelling and design capabilities in this regard.
+Now despite existing tools (e.g. [CGAL](https://www.cgal.org/), [Cork](https://github.com/gilbo/cork), [Carve](https://code.google.com/archive/p/carve/) or [tetrahedral-mesh tools](https://github.com/loopstring/3d-cutter.git)), it is still a challenge to cut manifold surfaces without restrictive assumptions on the input meshes. Moreover, aside from traditional CSG operations, practically all sophisticated modelling software ([Maya](https://www.autodesk.com/products/maya/overview), [Cinema4D](https://www.maxon.net/en/cinema-4d), [Blender](https://www.blender.org/), [MeshMixer](https://www.meshmixer.com/), [ANSYS SpaceClaim](https://www.ansys.com/products/3d-design/ansys-spaceclaim) etc.) permit only flat _planar cuts_ which severely restricts their modelling and design capabilities in this regard.
 
 ## What MCUT can do
 
@@ -43,7 +43,7 @@ Now despite existing tools (e.g. [CGAL](https://www.cgal.org/), [Cork](https://g
 
 The general design of MCUT is fairly simple to describe but has essential criteria which must be satisfied for practical use. In addition to being reasonably simple to use and robust, MCUT is specifically designed to be _a cutting tool_ supporting the following features: 
 
-* **Arbitrary manifold meshes**: These can be _open_ by having borders/boundaries like a sheet, or _closed_ as in 'watertight'. 
+* **Arbitrary manifold meshes**: These can be _open_ by having borders/boundaries like a sheet, or _closed_ as in 'watertight' (like a sphere). 
 * **Partial cut intersections**: Non-through cuts where a sliced object need not be completely partitioned into separate parts. 
 * **Stencilling**: Silhouette cut-outs of the cutting surface representing holes/patches corresponding to the holes to be filled after cutting.
 * **Intersection path queries**: Ability to extract edges (and/or vertices) introduced as a result of the cut.

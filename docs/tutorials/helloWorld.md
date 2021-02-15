@@ -130,7 +130,7 @@ mcDispatch(
     0, NULL, NULL);
 ```
 
-... and that's it - we have cut our cube. Simple huh..? ;)
+... and that's it - we have cut our cube. Simple huh..? 
 
 Before moving on to the next section, let peek at the parameters a bit. They seem a lot at-first-glance but if we look closer we can see that most of them are just our mesh variables that we defined previously. So they are covered. The first parameter is our context (of-course!) which will hold all information/state relating to our operation. The second parameter specifies how MCUT should interpret our vertex arrays (`cubeVertices` and `cutMeshVertices`). In this example, `MC_DISPATCH_VERTEX_ARRAY_FLOAT` means "interpret the data as 32-bit floats" which must match with our arrays. We can ignore the last three because we dont need them here (thread synchronisation stuff).
 

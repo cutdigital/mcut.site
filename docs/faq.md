@@ -20,8 +20,11 @@
 ??? faq "Can the cut surface be a non-manifold mesh?"
     No. The cut surface must always be a manifold surface mesh. 
 
+??? faq "Handling edge-edge and face-vertex intersections"
+    The aim of MCUT is to resolve the combinatorial structure of the meshes being cut, focusing strictly on topology/connectivity. Thus, MCUT expects that all polygon intersections can be reduced to edge-face intersections, which alleviates a heavy reliance on numerical operations through out the execution pipeline. Moreover MCUT will only use numerical (e.g. floating point) computations to find where polygons intersect. The remaining logic is a deterministic set of well defined algorithms to separate meshes as advertised.
+
 ??? faq "What constitues a valid mesh for MCUT?"
-    A valid mesh is a connected component which is a 2-manifold surface that has no self-intersections involving polygons _along the cut_.
+    A valid mesh is a connected component which is a manifold surface that has no self-intersections involving polygons _along the cut_. We take the definition of manifold to be a mesh where every edge is incident to (i.e. used by) one or two faces.
 
 ??? faq "Where can I find the documentation for using MCUT?"
     Function documentation is provided in the main header file, which is `include/mcut/mcut.h`. There are three options for viewing this documentation: 1) building the docs with doxygen (see [Compilation](building)), 2) doing a Ctrl+F on `mcut.h` in your favourite text editor/IDE, and 3) using the github search function in the MCUT [repository](https://github.com/cutdigital/mcut.git).
