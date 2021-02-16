@@ -20,8 +20,8 @@
 ??? faq "Can the cut surface be a non-manifold mesh?"
     No. The cut surface must always be a manifold surface mesh. 
 
-??? faq "Handling edge-edge and face-vertex intersections"
-    The aim of MCUT is to resolve the combinatorial structure of the meshes being cut, focusing strictly on topology/connectivity. Thus, MCUT expects that all polygon intersections can be reduced to edge-face intersections, which alleviates a heavy reliance on numerical operations through out the execution pipeline. Moreover MCUT will only use numerical (e.g. floating point) computations to find where polygons intersect. The remaining logic is a deterministic set of well defined algorithms to separate meshes as advertised.
+??? faq "Edge-edge and face-vertex intersections"
+    A key objective in the design of MCUT is to resolve the combinatorial structure of the meshes being cut by using their topology/connectivity. This improves robustness by constraining the potential sources of roundoff error that may lead to an incorrect results in exceptional--but important--use cases. Therefore, _MCUT expects that all polygon intersections can be reduced to edge-face intersections_, thereby minimising the prevalence of numerical tests. In practice, MCUT only needs the [orientation](http://www.cs.cmu.edu/~quake/robust.html) predicate that simply evaluates the sign of a determinant to guarantee a correct numerical test result - with single or double precision floating-point numbers. The remaining logic is a deterministic set of well-defined algorithms which are guarranteed to work given the robustness of the numerical predicate.
 
 ??? faq "What constitues a valid mesh for MCUT?"
     A valid mesh is a connected component which is a manifold surface that has no self-intersections involving polygons _along the cut_. We take the definition of manifold to be a mesh where every edge is incident to (i.e. used by) one or two faces.
