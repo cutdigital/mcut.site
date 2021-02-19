@@ -126,13 +126,12 @@ mcDispatch(
     cutMeshFaces,
     cutMeshFaceSizes,
     numCutMeshVertices,
-    numCutMeshFaces,
-    0, NULL, NULL);
+    numCutMeshFaces);
 ```
 
 ... and that's it - we have cut our cube. Simple huh..? 
 
-Before moving on to the next section, let peek at the parameters a bit. They seem a lot at-first-glance but if we look closer we can see that most of them are just our mesh variables that we defined previously. So they are covered. The first parameter is our context (of-course!) which will hold all information/state relating to our operation. The second parameter specifies how MCUT should interpret our vertex arrays (`cubeVertices` and `cutMeshVertices`). In this example, `MC_DISPATCH_VERTEX_ARRAY_FLOAT` means "interpret the data as 32-bit floats" which must match with our arrays. We can ignore the last three because we dont need them here (thread synchronisation stuff).
+Before moving on to the next section, let peek at the parameters a bit. They seem a lot at-first-glance but if we look closer we can see that most of them are just our mesh variables that we defined previously. So they are covered. The first parameter is our context (of-course!) which will hold all information/state relating to our operation. The second parameter specifies how MCUT should interpret our vertex arrays (`cubeVertices` and `cutMeshVertices`). In this example, `MC_DISPATCH_VERTEX_ARRAY_FLOAT` means "interpret the data as 32-bit floats" which must match with our arrays.
 
 ### Where's my output?
 
@@ -145,9 +144,9 @@ The first step to getting our output from MCUT to query for how many meshes (oth
 ```cpp
 uint32_t numConnComps;
 std::vector<McConnectedComponent> connComps;
-mcGetConnectedComponents(context, MC_TRUE, MC_CONNECTED_COMPONENT_TYPE_ALL, 0, NULL, &numConnComps, 0, NULL, NULL);
+mcGetConnectedComponents(context, MC_CONNECTED_COMPONENT_TYPE_ALL, 0, NULL, &numConnComps);
 connComps.resize(numConnComps);
-mcGetConnectedComponents(context, MC_TRUE, MC_CONNECTED_COMPONENT_TYPE_ALL, (uint32_t)connComps.size(), connComps.data(), NULL, 0, NULL, NULL);
+mcGetConnectedComponents(context, MC_CONNECTED_COMPONENT_TYPE_ALL, (uint32_t)connComps.size(), connComps.data(), NULL);
 ```
 
 Notice how we had to call `mcGetConnectedComponents` twice? We do this because in MCUT querying information is a two-step process. First you need to allocate memory for one or more structures. Then you need to initialize these structures. 
@@ -180,36 +179,36 @@ And here is how we query the data of a connected component (vertices, faces etc.
 *query the number of vertices*
 
 ```cpp
-mcGetConnectedComponentData(context, MC_TRUE, connComp, MC_CONNECTED_COMPONENT_DATA_VERTEX_COUNT, 0, NULL, &numBytes, 0, NULL, NULL);
+mcGetConnectedComponentData(context, connComp, MC_CONNECTED_COMPONENT_DATA_VERTEX_COUNT, 0, NULL, &numBytes);
 uint32_t numberOfVertices = 0;
-mcGetConnectedComponentData(context, MC_TRUE, connComp, MC_CONNECTED_COMPONENT_DATA_VERTEX_COUNT, numBytes, &numberOfVertices, NULL, 0, NULL, NULL);
+mcGetConnectedComponentData(context, connComp, MC_CONNECTED_COMPONENT_DATA_VERTEX_COUNT, numBytes, &numberOfVertices, NULL);
 ```
 
 *query the vertices*
 
 ```cpp
-mcGetConnectedComponentData(context, MC_TRUE, connComp, MC_CONNECTED_COMPONENT_DATA_VERTEX_FLOAT, 0, NULL, &numBytes, 0, NULL, NULL);
+mcGetConnectedComponentData(context, connComp, MC_CONNECTED_COMPONENT_DATA_VERTEX_FLOAT, 0, NULL, &numBytes);
 std::vector<float> vertices;
 vertices.resize(numBytes / sizeof(float)); //... or --> numberOfVertices * 3
-mcGetConnectedComponentData(context, MC_TRUE, connComp, MC_CONNECTED_COMPONENT_DATA_VERTEX_FLOAT, numBytes, (void*)vertices.data(), NULL, 0, NULL, NULL);
+mcGetConnectedComponentData(context, connComp, MC_CONNECTED_COMPONENT_DATA_VERTEX_FLOAT, numBytes, (void*)vertices.data(), NULL);
 ```
 
 *query the faces*
 
 ```cpp
-mcGetConnectedComponentData(context, MC_TRUE, connComp, MC_CONNECTED_COMPONENT_DATA_FACE, 0, NULL, &numBytes, 0, NULL, NULL);
+mcGetConnectedComponentData(context, connComp, MC_CONNECTED_COMPONENT_DATA_FACE, 0, NULL, &numBytes);
 std::vector<uint32_t> faceIndices;
 faceIndices.resize(numBytes / sizeof(uint32_t));
-mcGetConnectedComponentData(context, MC_TRUE, connComp, MC_CONNECTED_COMPONENT_DATA_FACE, numBytes, faceIndices.data(), NULL, 0, NULL, NULL);
+mcGetConnectedComponentData(context, connComp, MC_CONNECTED_COMPONENT_DATA_FACE, numBytes, faceIndices.data(), NULL);
 ```
 
 *query the face sizes*
 
 ```cpp
-mcGetConnectedComponentData(context, MC_TRUE, connComp, MC_CONNECTED_COMPONENT_DATA_FACE_SIZE, 0, NULL, &numBytes, 0, NULL, NULL);
+mcGetConnectedComponentData(context, connComp, MC_CONNECTED_COMPONENT_DATA_FACE_SIZE, 0, NULL, &numBytes);
 std::vector<uint32_t> faceSizes;
 faceSizes.resize(numBytes / sizeof(uint32_t));
-mcGetConnectedComponentData(context, MC_TRUE, connComp, MC_CONNECTED_COMPONENT_DATA_FACE_SIZE, numBytes, faceSizes.data(), NULL, 0, NULL, NULL);
+mcGetConnectedComponentData(context, connComp, MC_CONNECTED_COMPONENT_DATA_FACE_SIZE, numBytes, faceSizes.data(), NULL);
 ```
 
 Glancing through the code, its fairly easy to see that we are using `mcGetConnectedComponentData` similarly to the way we used `mcGetConnectedComponents` in the previous section, which makes the library very easy to use.

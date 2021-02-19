@@ -10,13 +10,11 @@ The first step is querying the actual number of vertices (in a given connected c
 uint64_t vertexCountBytes = 0;
 McResult err = mcGetConnectedComponentData(
     context, 
-    MC_TRUE, 
     cc, // given connected component 
     MC_CONNECTED_COMPONENT_DATA_VERTEX_COUNT, 
     0, 
     NULL, 
-    &vertexCountBytes, 
-    0, NULL, NULL);
+    &vertexCountBytes);
 
 if(err)
 {
@@ -29,13 +27,11 @@ uint32_t numberOfVertices = 0;
 
 McResult err = mcGetConnectedComponentData(
     context_, 
-    MC_TRUE, 
     cc, 
     MC_CONNECTED_COMPONENT_DATA_VERTEX_COUNT, 
     vertexCountBytes, 
     &numberOfVertices, 
-    NULL, 
-    0, NULL, NULL);
+    NULL);
 
 if(err)
 {
@@ -47,7 +43,7 @@ Once we know the number of vertices, the next step is querying the exact coordin
 
 ```c++
 uint64_t connCompVerticesBytes = 0;
-McResult err = mcGetConnectedComponentData(context_, MC_TRUE, cc, MC_CONNECTED_COMPONENT_DATA_VERTEX_EXACT, 0, NULL, &connCompVerticesBytes, 0, NULL, NULL);
+McResult err = mcGetConnectedComponentData(context_, cc, MC_CONNECTED_COMPONENT_DATA_VERTEX_EXACT, 0, NULL, &connCompVerticesBytes);
 
 if(err)
 {
@@ -57,7 +53,7 @@ if(err)
 std::vector<char> rawVerticesString;
 rawVerticesString.resize(connCompVerticesBytes);
 
-McResult err = mcGetConnectedComponentData(context_, MC_TRUE, cc, MC_CONNECTED_COMPONENT_DATA_VERTEX_EXACT, connCompVerticesBytes, (void*)rawVerticesString.data(), NULL, 0, NULL, NULL);
+McResult err = mcGetConnectedComponentData(context_, cc, MC_CONNECTED_COMPONENT_DATA_VERTEX_EXACT, connCompVerticesBytes, (void*)rawVerticesString.data(), NULL);
 
 if(err)
 {
@@ -124,6 +120,6 @@ for (uint32_t i = 0; i < numberOfVertices * 3; ++i) {
 Note that using `MC_CONNECTED_COMPONENT_DATA_VERTEX_EXACT` guarrantees exact numbers only if the following is true 
 
 1. `mcDispatch` was called with meshes defined using `MC_DISPATCH_VERTEX_ARRAY_EXACT`, and 
-2. MCUT libary was compiled with arbitrary precision numbers enabled (see [Compilation](building)). 
+2. MCUT libary is implemented with arbitrary precision numbers enabled (see [Compilation](building)). 
 
 Otherwise, the operation is equivalent to using `std::to_string` on values of type `float` or `double`, respectively.

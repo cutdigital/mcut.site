@@ -78,7 +78,7 @@ nav:
   - Home: 'index.md'
   - Compilation: 'building.md' 
   - Tutorials: 
-    - 'DesignPrincipals' : 'tutorials/designPrincipals.md'
+    - 'DesignPrinciples' : 'tutorials/designPrincipals.md'
     - 'HelloWorld' : 'tutorials/helloWorld.md'
     - 'Debugging' : 'tutorials/debugging.md'
     - 'Meshes' : 'tutorials/meshes.md'
