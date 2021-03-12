@@ -64,3 +64,14 @@
 
 ??? faq "Must all input meshes have a consistent winding order?"
     Yes. All input meshes must have a consistent winding order, but this order can be either clock-wise (CW) or counter clock-wise (CCW). Note however, _that the source mesh can be CCW while the cut mesh is CW, and vice-versa_.
+
+??? faq "Degenerate inputs (not in general position)"
+    MCUT is designed for inputs in "general position", but also provides a crude workaround for degenerate inputs. Here the notion of general position is defined with respect to the orientation predicate: a set of points is in general position if no three points (where two points from the same mesh) are collinear, or that no four points (where three points from the same mesh and plane) are coplanar.
+
+    The definition of "inputs" is relaxed here. Specifically by input, we mean the pairs of polygons from the source-mesh and cut-mesh that are tested for intersection. The polygons that are not intersecting in any form (i.e. even not touching) do not have to be in general position.
+
+    MCUT will use numerical perturbation of the cut-mesh so as to bring the input into general position. In such cases, the idea is to solve the cutting problem not on the given input, but on a nearby input. The nearby input is obtained by perturbing the given input. The perturbed input will then be in general position and, since it is near the original input, the result for the perturbed input will hopefully still be useful. This is justified by the fact that the task of MCUT is not to decide whether the input is in general position but rather to make perturbation on the input (if) necessary within the available precision of the computing device. 
+
+    Perturbation is enabled by including the appropriate `MC_DISPATCH_ENFORCE_GENERAL_POSITION` flag when calling the `mcDispatch` function, which is the crude workaround for degenerate inputs.
+      
+    *Note:* MCUT does not use [symbolic perturbation](https://hal.inria.fr/hal-01225202) since correct labelling of polygon intersection points is dependent on orientation predicates giving true answer i.e. `orient3d` and `orient2d` must return one of three values {-1, 0, +1} and not two {-1 or +1}, which is the essence of symbolic perturbation. The reason for MCUT doing this is that it allows us to identify intersection points 'topologically' and ensure that the entire implementation is free of numerical operations, except to compute intersection points. Thus, each intersection point can be uniquely identified according to the faces (from the source mesh and cut-mesh) that meet there, as well as the (half)edge that intersected a face to yeild that point.
