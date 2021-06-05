@@ -92,7 +92,7 @@ Also, the cut mesh need not partition the source mesh completely to allow _parti
 
 ### Robustness
 
-MCUT is _robust_, relying on well-tested geometric predicates for resolving intersections. By default, numerical operations are computed exactly up to machine precision (`long double`). The tool can also be configured to work with arbitrary-precision if so desired, surpassing limitations of machine precision for increased reliability and peace of mind. 
+MCUT is _robust_, relying on well-tested geometric predicates for resolving intersections. By default, numerical operations are computed exactly up to machine precision (`double`). The tool will also be configurable to work with arbitrary-precision if so desired, surpassing limitations of machine precision for increased reliability and peace of mind. 
 
 <div>
   <img src="media/mcut-zombiehead-scene.png" alt="mcut-extremely-concave-cut" style="width:70%" class="center"/> 

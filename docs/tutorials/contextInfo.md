@@ -28,7 +28,6 @@ The data type of the fourth argument is dependant on the second argument. The se
 | `MC_DEFAULT_ROUNDING_MODE` | `McRoundingModeFlags` | Default way to round the result of a floating-point operation. |
 | `MC_PRECISION_MAX` | `uint64_t` | Maximum value for precision bits. |
 | `MC_PRECISION_MIN` | `uint64_t` | Minimum value for precision bits. |
-| `MC_DEBUG_KERNEL_TRACE` | `McFlags` | Runtime execution trace. |
 
 
 Here is an example of how to use the `mcGetInfo` function:

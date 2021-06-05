@@ -66,7 +66,7 @@
     Yes. All input meshes must have a consistent winding order, but this order can be either clock-wise (CW) or counter clock-wise (CCW). Note however, _that the source mesh can be CCW while the cut mesh is CW, and vice-versa_.
 
 ??? faq "Degenerate inputs (not in general position)"
-    MCUT is designed for inputs in "general position", but also provides a crude workaround for degenerate inputs. Here the notion of general position is defined with respect to the orientation predicate: a set of points is in general position if no three points (where two points from the same mesh) are collinear, or that no four points (where three points from the same mesh and plane) are coplanar.
+    MCUT is designed for inputs in "general position", but also provides a crude workaround for degenerate inputs. Here the notion of general position is defined with respect to the orientation predicate: a set of points is in general position if no three points (where two points are from the same input mesh) are collinear, or that no four points (where three points from the same input mesh) are coplanar.
 
     The definition of "inputs" is relaxed here. Specifically by input, we mean the pairs of polygons from the source-mesh and cut-mesh that are tested for intersection. The polygons that are not intersecting in any form (i.e. even not touching) do not have to be in general position.
 

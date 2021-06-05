@@ -82,7 +82,6 @@ nav:
     - 'HelloWorld' : 'tutorials/helloWorld.md'
     - 'Debugging' : 'tutorials/debugging.md'
     - 'Meshes' : 'tutorials/meshes.md'
-    - 'GetExactCoords' : 'tutorials/exactCoords.md'
     - 'GetContextInfo' : 'tutorials/contextInfo.md'
   - Gallery: 'gallery.md'
   - FAQ: 'faq.md'

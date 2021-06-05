@@ -2,7 +2,7 @@
 
 ## Downloading MCUT
 
-MCUT is hosted on Github, which you can access [here](https://github.com/cutdigital/mcut.git). We recommend that you clone the project, for easier access to the latest updates (master branch). Alternatively, you can download a compressed release package from the GitHub repository itself. Be sure to get the most recent version.
+MCUT is hosted on Github, which you can access [here](https://github.com/cutdigital/mcut.git). Its recommended that you clone the project for easier access to the latest updates (master branch). Alternatively, you can download a compressed release package from the GitHub repository itself. Be sure to get the most recent version.
 
 ## Building MCUT
 
@@ -37,7 +37,7 @@ cmake .. # generate build files
 
 You may also use the CMake GUI, which may be easier. The CMake website has information on how you can do that [here](https://cmake.org/runningcmake/).
 
-### MPFR
+### MPFR (NOTE: under development)
 
 The following CMake flag can also be used to enable compiling with arbitrary-precision numbers:
 

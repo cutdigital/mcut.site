@@ -213,36 +213,3 @@ Given our configuration, and assuming you have a context that supports debug out
 **Backtracking the debug error source**
 
 Another great trick with debug output is that you can relatively easily figure out the exact line or call an error occurred. By setting a breakpoint in `mcDebugOutput` at a specific error type (or at the top of the function if you don't care), the debugger will catch the error thrown and you can move up the call stack to whatever function caused the message dispatch.
-
-## Verbose runtime log
-
-To supplement the above debugging methods, MCUT also allows users to query a detailed runtime log. This log details every step of execution up to the point of failure - that is if runtime did indeed fail, otherwise the log represents a clean pass. 
-
-This feature is--in essence--a last-ditch attempt to pinpoint the source of error. The main use is for filing bug reports.
-
-To query the detailed runtime log, we use the `mcGetInfo` function as follows:
-
-```c++
-std::vector<char> log;
-uint64_t numBytes = 0;
-
-McResult err = mcGetInfo(context, MC_DEBUG_KERNEL_TRACE, 0, nullptr, &numBytes);
-
-if(err)
-{
-    // ...
-}
-
-log.resize(numBytes);
-
-err = mcGetInfo(context, MC_DEBUG_KERNEL_TRACE, numBytes, &log[0], nullptr);
-
-if(err)
-{
-    // ...
-}
-```
-
-The data contained in `log` can then be printed or logged to file as required. 
-
-Be aware that information queried with the flag `MC_DEBUG_KERNEL_TRACE` reflects execution state following the most-recent `mcDispatch` call.
