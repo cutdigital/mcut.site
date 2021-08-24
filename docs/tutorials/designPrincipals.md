@@ -1,7 +1,18 @@
 # Design principles
 
-Here we summarize the main design principles in MCUT's design as a user interface:
+![Teaser](../media/mcut-cube-cut.png)
 
-1. **Simplicity**: As a user, you need only use standard arrays for passing data to MCUT, which are simple fixed-size sequential collections of elements of the same type. We expose MCUT functionality with a familiar C-style API which greatly favors code simplicity and makes code portable (e.g. for binding).
+Here we summarize the design principles of MCUT:
 
-2. **Minimal dependencies**: In general, MCUT has no dependancies. Users may however choose to use external libraries (in fact, just one which is MPFR) if they so desire, and we wrap them in a small set of configuration variables that can be set at build time (see [Compilation](building)).
+* **Fast**: Processing meshes with over 100k polygons in a few seconds.
+
+* **Robust**: Thorougly tested and works with exact predicates. 
+
+* **Simple**: Straightforward and portable C-API.
+
+* **Minimal**: Self-contained and without dependancies.
+
+----
+
+The above image depicts the gist of what MCUT does. On the left is a cube (the "source mesh") that is cut by a circular surface (the "cut mesh"), which together comprise the _input_. On the right is the resulting set of connected components after partitioning the cube. In general, the _output_ of MCUT includes unsealed fragments (mid-left), cut mesh patches (middle), and the sealed fragments whose holes have been filled with cut mesh polygons that lie on the interior of the source mesh. Sealing can also be done using cut mesh polygons that lie on the exterior of the source mesh. 
+

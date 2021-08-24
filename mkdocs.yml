@@ -25,7 +25,7 @@ extra:
 theme:
   name: 'material'
   palette:
-    primary: 'deep purple'
+    primary: 'teal'
     accent: 'red'
   font:
     text: 'Merriweather'

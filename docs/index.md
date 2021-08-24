@@ -6,11 +6,11 @@
     </div>
 </div>
 
-**MCUT** (pronounced 'emcut') is a tool for cutting meshes: It is a library for partitioning meshes that are two-manifold and is useful for operations like slicing and CSG boolean operations. 
+**MCUT** (pronounced 'emcut') is a tool for cutting meshes: It is a library for partitioning meshes that are two-manifold and is useful for operations like regular slicing and CSG boolean operations. 
 
-The library partitions shapes directly from input mesh data composed of geometry and connectivity to produce crisp fragments at fine scale. It is the only existing tool allowing cuts on planar-polygon meshes without requiring them to be triangulated solids.  
+The library partitions shapes directly using their geometry to produce crisp fragments at fine scale. It is the only existing tool for cutting planar-polygon meshes without necessarily requiring them to be triangulated solids.  
 
-MCUT also provides features like stencilling to produce cut-outs/patches of the cutting surface that is used to partition a given shape. It also supports intersection-curve queries and partial cuts, using one simple interface.
+MCUT also provides features like stencilling to produce cut-outs/patches of the cutting surface that is used to partition a given shape. It also supports intersection-curve queries and partial cuts.
 
 ## Motivation
 
@@ -26,13 +26,6 @@ In addition to being simple, fast and robust, MCUT is specifically designed to b
 * **Manifold meshes**: _open_  (with borders/boundaries), or _closed_ (as in 'watertight'). 
 * **Partial cuts**: A sliced object need not be completely cut into disjoint parts. 
 * **Stencilling**: Silhouette cut-outs of the cutting surface patches.
-* **Intersection curves**: Vertices/edges introduced as a result of the cut.
+* **Intersection curves**: Query vertices introduced as a result of a cut.
 * **Booleans**: Traditional CSG operations. 
-* **N-gons**: Arbitrary planar-polygon subdivisions. 
-
-### Example 
-
-![Teaser](media/mcut-cube-cut.png)
-
-The above image shows a simple example of what MCUT can do. On the left is a cube (the "source mesh") that is cut by a circular surface (the "cut mesh"), which together comprise the _input_. On the right is the resulting set of connected components after partitioning the cube. In general, the _output_ of MCUT includes unsealed fragments (mid-left), cut mesh patches (middle), and the sealed fragments whose holes have been filled with cut mesh polygons that lie on the interior of the source mesh. Sealing can also be done using cut mesh polygons that lie on the exterior of the source mesh. 
-
+* **N-gons**: Arbitrary planar-polygon meshes. 
