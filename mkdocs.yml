@@ -76,8 +76,8 @@ plugins:
 
 nav:
   - Home: 'index.md'
-  - Compilation: 'building.md' 
-  - Tutorials: 
+  - Build: 'building.md' 
+  - Tutorial: 
     - 'DesignPrinciples' : 'tutorials/designPrincipals.md'
     - 'HelloWorld' : 'tutorials/helloWorld.md'
     - 'Debugging' : 'tutorials/debugging.md'

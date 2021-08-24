@@ -37,7 +37,7 @@ cmake .. # generate build files
 
 You may also use the CMake GUI, which may be easier. The CMake website has information on how you can do that [here](https://cmake.org/runningcmake/).
 
-### MPFR (NOTE: under development)
+### MPFR
 
 The following CMake flag can also be used to enable compiling with arbitrary-precision numbers:
 
