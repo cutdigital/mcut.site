@@ -5,7 +5,7 @@ MCUT is available under an _Open Source license_ as well as a _commercial licens
 
 The Open Source license is the [GNU General Public License](https://www.gnu.org/licenses/gpl-3.0.en.html) (GPL).
 
-Below is a brief overview of the license scheme and the rights given to users. Do not hesitate to [contact us](https://cut-digital.com/contact/) if you have questions regarding the licenses.
+Below is a brief overview of the license scheme and the rights given to users.
 
 ## The Open Source License
 
