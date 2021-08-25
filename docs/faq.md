@@ -1,5 +1,19 @@
 # FAQ
 
+<div class="row">
+  <div class="column">
+    <img src="../media/mcut-armadillo-cut-surface.png" alt="drawing1" style="width:100%"/> 
+    
+  </div>
+  <div class="column">
+    <img src="../media/mcut-armadillo-cut-unsealed.png" alt="drawing3" style="width:85%"/>
+  </div>
+  <div class="column">
+    <img src="../media/mcut-armadillo-cut-sealed.png" alt="drawing2" style="width:85%"/> 
+    
+  </div>
+</div>
+
 ??? faq "Is MCUT restricted to triangle meshes?"
     No. MCUT is designed to work with meshes that are made with arbitrary--but planar--polygons. These polygons can be convex or convex, so triangle meshes are just a special case.
 
@@ -19,11 +33,6 @@
 
 ??? faq "Can the cut surface be a non-manifold mesh?"
     No. The cut surface must always be a manifold surface mesh. 
-
-??? faq "Edge-edge and face-vertex intersections"
-    MCUT expects that all polygon intersections can be reduced to edge-face intersections.
-    
-    Detail: A key objective in the design of MCUT is to resolve the combinatorial structure of the meshes being cut by using their connectivity. Using edge-face intersections tests compliments our design choice to work with connectivity by: 1) constraining the sources of roundoff error (during polygon intersection tests) for improving robustness, and 2) enabling a general solution to the 'mesh arrangements' problem, catering to numerous mesh configurations such as mesh slicing with arbitrary manifold shapes and surfaces. It also means that MCUT is able to resolve all mesh intersections using just one geometric predicate - the [orientation predicate](http://www.cs.cmu.edu/~quake/robust.html) which evaluates the sign of a determinant to guarantee correct a numerical test result with single or double precision floating-point numbers. The remaining parts of MCUT are a deterministic set of well-defined algorithms which are guarranteed to work given the robustness of the numerical predicate.
 
 ??? faq "What constitues a valid mesh for MCUT?"
     A valid mesh is a connected component which is a manifold surface that has no self-intersections involving polygons _along the cut_. We take the definition of manifold to be a mesh where every edge is incident to (i.e. used by) one or two faces.
@@ -66,7 +75,12 @@
     Yes. All input meshes must have a consistent winding order, but this order can be either clock-wise (CW) or counter clock-wise (CCW). Note however, _that the source mesh can be CCW while the cut mesh is CW, and vice-versa_.
 
 ??? faq "Degenerate inputs (not in general position)"
-    MCUT is designed for inputs in "general position", but also provides a crude workaround for degenerate inputs. Here the notion of general position is defined with respect to the orientation predicate: a set of points is in general position if no three points (where two points are from the same input mesh) are collinear, or that no four points (where three points from the same input mesh) are coplanar.
+
+    MCUT expects that all polygon intersections can be reduced to edge-face intersections.
+    
+    A key objective in the design of MCUT is to resolve the combinatorial structure of the meshes being cut by using their connectivity. Using edge-face intersections tests compliments our design choice to work with connectivity by: 1) constraining the sources of roundoff error (during polygon intersection tests) for improving robustness, and 2) enabling a general solution to the 'mesh arrangements' problem, catering to numerous mesh configurations such as mesh slicing with arbitrary manifold shapes and surfaces. 
+    
+    Thus, MCUT is designed for inputs in "general position", but also provides a crude workaround for degenerate inputs. Here the notion of general position is defined with respect to the orientation predicate: a set of points is in general position if no three points (where two points are from the same input mesh) are collinear, or that no four points (where three points from the same input mesh) are coplanar.
 
     The definition of "inputs" is relaxed here. Specifically by input, we mean the pairs of polygons from the source-mesh and cut-mesh that are tested for intersection. The polygons that are not intersecting in any form (i.e. even not touching) do not have to be in general position.
 
@@ -74,4 +88,4 @@
 
     Perturbation is enabled by including the appropriate `MC_DISPATCH_ENFORCE_GENERAL_POSITION` flag when calling the `mcDispatch` function, which is the crude workaround for degenerate inputs.
       
-    *Note:* MCUT does not use [symbolic perturbation](https://hal.inria.fr/hal-01225202) since correct labelling of polygon intersection points is dependent on orientation predicates giving true answer i.e. `orient3d` and `orient2d` must return one of three values {-1, 0, +1} and not two {-1 or +1}, which is the essence of symbolic perturbation. The reason for MCUT doing this is that it allows us to identify intersection points 'topologically' and ensure that the entire implementation is free of numerical operations, except to compute intersection points. Thus, each intersection point can be uniquely identified according to the faces (from the source mesh and cut-mesh) that meet there, as well as the (half)edge that intersected a face to yeild that point.
+    *Note:* MCUT does not use [symbolic perturbation](https://hal.inria.fr/hal-01225202) since correct labelling of polygon intersection points is dependent on orientation predicates giving true answer i.e. [`orient3d` and `orient2d`](http://www.cs.cmu.edu/~quake/robust.html) must return one of three values {-1, 0, +1} and not two {-1 or +1}, which is the essence of symbolic perturbation. The reason for MCUT doing this is that it allows us to identify intersection points 'topologically' and ensure that the entire implementation is free of numerical operations, except to compute intersection points. Thus, each intersection point can be uniquely identified according to the faces (from the source mesh and cut-mesh) that meet there, as well as the (half)edge that intersected a face to yeild that point.

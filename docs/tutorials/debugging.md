@@ -11,14 +11,9 @@ All MCUT API functions return an error code. The error codes that functions can 
 |     Flag       | Description      |
 |:----------------|----------------|
 |      `MC_NO_ERROR`          |         Everthing is fine. |
-|         `MC_INVALID_SRC_MESH` | The source-mesh is not manifold.         |
-|           `MC_INVALID_CUT_MESH` | The cut-mesh is not manifold.            |
-| `MC_EDGE_EDGE_INTERSECTION` | Found two intersecting edges. |
-| `MC_FACE_VERTEX_INTERSECTION` | Found an edge-vertex which lies on a face. |
 |   `MC_INVALID_OPERATION` | The state for a command is not legal for its given parameters.            |
 |     `MC_INVALID_VALUE` | Set when a value parameter is not legal.            |
 | `MC_OUT_OF_MEMORY` | Internal memory allocation failure.     |
-|  `MC_INVALID_MESH_PLACEMENT` | One or more input mesh vertices coincide. |
 
 Within MCUT's function documentation you can always find the error codes a function generates the moment it is incorrectly used. 
 
@@ -35,7 +30,7 @@ void mcCheckError_(McResult err, const char *file, int line)
         std::string errorStr;
         switch (err)
         {
-            case MC_INVALID_SRC_MESH:               errorStr = "MC_INVALID_SRC_MESH"; break;
+            case MC_INVALID_OPERATION:               errorStr = "MC_INVALID_OPERATION"; break;
             // ...
         }
         std::cout << errorStr << " | " << file << " (" << line << ")" << std::endl;

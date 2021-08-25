@@ -85,9 +85,5 @@ nav:
     - 'GetContextInfo' : 'tutorials/contextInfo.md'
   - Gallery: 'gallery.md'
   - FAQ: 'faq.md'
-  - About:
-    - 'The product': 'product.md'
-    - 'License': 'license.md'
-    - 'Bug reports': 'bug-report.md'
-    - 'Change logs': 'changelog.md'
+  - License: 'license.md'
 
