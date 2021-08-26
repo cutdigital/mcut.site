@@ -7,7 +7,7 @@ The Open Source license is the [GNU General Public License](https://www.gnu.org/
 
 Below is a brief overview of the license scheme and the rights given to users.
 
-## The Open Source License
+## Open source license
 
 The code is released under the GPL in order to protect its commercial value. This allows for commercialisation, which guarantees long term support, maintenance and further developments of the code for the benefit of the project and its users.
 
@@ -20,9 +20,11 @@ If you distribute your software based on GPL (i.e. without purchasing the commer
 * You are obliged to distribute the modifications of MCUT you made, and 
 * You are furthermore obliged to distribute the source code of your own software under the GPL.
 
-## The Commercial License
+## Commercial license
 
-In cases where the constraints of the Open Source license prevent you from using MCUT, you can buy a commercial license for MCUT from [CutDigital](https://cut-digital.com). The commercial license includes the full source code for MCUT and any associated tools, ongoing technical support, and all future updates at no additional cost. The commercial license also allows MCUT to be used in an unlimited number of products developed by a company. Email: [contact@cut-digital.com](contact@cut-digital.com) for further information.
+In cases where the constraints of the Open source license prevent you from using MCUT, you can buy a commercial license from [CutDigital](https://cut-digital.com). The commercial license includes the full source code for MCUT and any associated tools, ongoing technical support, and all future updates at no additional cost. The commercial license also allows MCUT to be used in an unlimited number of products developed by a company. 
+
+Email: [contact@cut-digital.com](contact@cut-digital.com) for further information.
 
 <div class="container">
     <div style="float:left;width:49%">

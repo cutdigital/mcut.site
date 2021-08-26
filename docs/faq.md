@@ -1,19 +1,5 @@
 # FAQ
 
-<div class="row">
-  <div class="column">
-    <img src="../media/mcut-armadillo-cut-surface.png" alt="drawing1" style="width:100%"/> 
-    
-  </div>
-  <div class="column">
-    <img src="../media/mcut-armadillo-cut-unsealed.png" alt="drawing3" style="width:85%"/>
-  </div>
-  <div class="column">
-    <img src="../media/mcut-armadillo-cut-sealed.png" alt="drawing2" style="width:85%"/> 
-    
-  </div>
-</div>
-
 ??? faq "Is MCUT restricted to triangle meshes?"
     No. MCUT is designed to work with meshes that are made with arbitrary--but planar--polygons. These polygons can be convex or convex, so triangle meshes are just a special case.
 
@@ -89,3 +75,17 @@
     Perturbation is enabled by including the appropriate `MC_DISPATCH_ENFORCE_GENERAL_POSITION` flag when calling the `mcDispatch` function, which is the crude workaround for degenerate inputs.
       
     *Note:* MCUT does not use [symbolic perturbation](https://hal.inria.fr/hal-01225202) since correct labelling of polygon intersection points is dependent on orientation predicates giving true answer i.e. [`orient3d` and `orient2d`](http://www.cs.cmu.edu/~quake/robust.html) must return one of three values {-1, 0, +1} and not two {-1 or +1}, which is the essence of symbolic perturbation. The reason for MCUT doing this is that it allows us to identify intersection points 'topologically' and ensure that the entire implementation is free of numerical operations, except to compute intersection points. Thus, each intersection point can be uniquely identified according to the faces (from the source mesh and cut-mesh) that meet there, as well as the (half)edge that intersected a face to yeild that point.
+
+<div class="row">
+  <div class="column">
+    <img src="../media/mcut-armadillo-cut-surface.png" alt="drawing1" style="width:100%"/> 
+    
+  </div>
+  <div class="column">
+    <img src="../media/mcut-armadillo-cut-unsealed.png" alt="drawing3" style="width:85%"/>
+  </div>
+  <div class="column">
+    <img src="../media/mcut-armadillo-cut-sealed.png" alt="drawing2" style="width:85%"/> 
+    
+  </div>
+</div>

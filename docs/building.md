@@ -17,7 +17,7 @@ cd build
 cmake .. 
 ```
 
-Refer to the `mcut/CMakeLists.txt` for information about extra configuration flags.
+Refer to the `mcut/CMakeLists.txt` for information about additional configuration flags.
 
 ---
 
