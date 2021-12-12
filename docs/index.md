@@ -49,7 +49,3 @@ In addition to being simple, fast and robust, MCUT is specifically designed to b
     <img src="media/mcut-extremely-concave-cut.png" alt="mcut-extremely-concave-cut" style="width:50%" class="center"/> 
     <p style="text-align:center;font-size:60%;">An extreme example, which is a result of cutting a source mesh that has concave polygons. The source mesh was a pentagonal frustum with the pentagons (top and bottom faces) made concave (and not parallel to each other). Each pentagon was composed of polygons with several concavities. The whole model was composed of only one volume element (all edges are on the surface). MCUT produces the correct fragments, and does not modify the connectivity except where intersected with the cut mesh. </p>
 </div>
-
-----
-
-The gist of how MCUT works is presented in a Journal article [here](https://onlinelibrary.wiley.com/doi/abs/10.1111/cgf.13953).
