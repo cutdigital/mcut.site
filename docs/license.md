@@ -40,7 +40,7 @@ Email the [author](floyd.m.chitalu@gmail.com) for further information.
 
 The licensing model of MCUT is motivated by the desire to eliminate the access costs for users/creators of derivative works by minimising the restrictions posed by strict copyright rules. 
 
-"Access costs" refers to expenses for users that wish to e.g. do research or create a derivative works—such as their own 3D mesh processing tool(s), a copy of MCUT modified to fix a bug, or add a feature—but are unable (or perhaps even unwilling) to pay for the right to do so.
+"Access costs" refers to expenses for users that wish to e.g. do research or create a derivative work—such as their own 3D mesh processing tool(s), a copy of MCUT modified to fix a bug, or add a feature—but are unable (or perhaps even unwilling) to pay for the right to do so.
 
 This reduction of access costs also aims to increase usage by gaining "market share", leading to even more frequent creation of derivative works. The by-product of this increased usage is further awareness e.g. through recommendations via networks, forums, word-of-mouth etc. The openness of MCUT´s development and its diverse user-base will also garner additional trust as a reliable tool that is also viable for commercial use.
 
