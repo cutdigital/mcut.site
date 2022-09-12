@@ -176,14 +176,6 @@ uint64_t numBytes = 0; // number of bytes we must allocate.
 
 And here is how we query the data of a connected component (vertices, faces etc.):
 
-*query the number of vertices*
-
-```cpp
-mcGetConnectedComponentData(context, connComp, MC_CONNECTED_COMPONENT_DATA_VERTEX_COUNT, 0, NULL, &numBytes);
-uint32_t numberOfVertices = 0;
-mcGetConnectedComponentData(context, connComp, MC_CONNECTED_COMPONENT_DATA_VERTEX_COUNT, numBytes, &numberOfVertices, NULL);
-```
-
 *query the vertices*
 
 ```cpp
@@ -191,6 +183,12 @@ mcGetConnectedComponentData(context, connComp, MC_CONNECTED_COMPONENT_DATA_VERTE
 std::vector<float> vertices;
 vertices.resize(numBytes / sizeof(float)); //... or --> numberOfVertices * 3
 mcGetConnectedComponentData(context, connComp, MC_CONNECTED_COMPONENT_DATA_VERTEX_FLOAT, numBytes, (void*)vertices.data(), NULL);
+```
+
+The number of vertices can be determined based on the type used to represent the queried vertices and the number of bytes: 
+```cpp
+uint32_t numberOfVertices = numBytes / (sizeof(float)*3); // 3 floats per vertex
+
 ```
 
 *query the faces*
