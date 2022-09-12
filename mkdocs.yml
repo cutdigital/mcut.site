@@ -81,7 +81,6 @@ nav:
     - 'HelloWorld' : 'tutorials/helloWorld.md'
     - 'Debugging' : 'tutorials/debugging.md'
     - 'Meshes' : 'tutorials/meshes.md'
-    - 'connectedComponents' : 'tutorials/connectedComponents.md'
   - Gallery: 'gallery.md'
   - FAQ: 'faq.md'
   - Licensing: 'license.md'
