@@ -81,8 +81,8 @@ nav:
     - 'HelloWorld' : 'tutorials/helloWorld.md'
     - 'Debugging' : 'tutorials/debugging.md'
     - 'Meshes' : 'tutorials/meshes.md'
-    - 'GetContextInfo' : 'tutorials/contextInfo.md'
+    - 'connectedComponents' : 'tutorials/connectedComponents.md'
   - Gallery: 'gallery.md'
   - FAQ: 'faq.md'
-  - License: 'license.md'
+  - Licensing: 'license.md'
 
